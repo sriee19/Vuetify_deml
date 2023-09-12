@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <v-app id="inspire">
     <NavbarComponent :drawer="drawer" />
     <TopbarComponent @drawerEvent="drawer = !drawer" />
@@ -20,5 +20,36 @@ export default {
   }),
   methods: {},
 };
-</script>
+</script> -->
 
+<!-- <template>
+  <div>
+    <pdf-viewer :pdf-url="pdfUrl" />
+  </div>
+</template>
+
+<script>
+import PdfViewer from "../src/components/PdfComponent.vue";
+export default {
+  components: {
+    PdfViewer,
+  },
+  data() {
+    return {
+      pdfUrl: "",
+    };
+  },
+};
+</script> -->
+
+<template>
+  <div id="app">
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App",
+};
+</script>

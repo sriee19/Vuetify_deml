@@ -1,0 +1,17 @@
+// Example code to fetch a PDF URL from Firestore
+const db = firebase.firestore();
+
+db.collection("pdfs")
+  .doc("your_document_id")
+  .get()
+  .then((doc) => {
+    if (doc.exists) {
+      const pdfUrl = doc.data().pdfUrl;
+      console.log("PDF URL:", pdfUrl);
+    } else {
+      console.error("PDF document not found.");
+    }
+  })
+  .catch((error) => {
+    console.error("Error fetching PDF document:", error);
+  });

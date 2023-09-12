@@ -1,0 +1,10 @@
+// Example code to upload a PDF file to Firebase Storage
+const storageRef = firebase.storage().ref();
+const pdfFile = ...; // This should be a Blob or File object representing your PDF
+const pdfRef = storageRef.child("pdfs/your-pdf-file.pdf");
+
+pdfRef.put(pdfFile).then((snapshot) => {
+  console.log("PDF uploaded successfully");
+}).catch((error) => {
+  console.error("Error uploading PDF:", error);
+});
